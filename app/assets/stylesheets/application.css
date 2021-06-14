@@ -1,15 +1,179 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+header {
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 5px solid #C0C0C0;
+    padding-bottom: 10px;
+    background-size: cover;
+}
+
+header li {
+    list-style: none;
+    padding-right: 20px;
+}
+
+header ul {
+    display: flex;
+    margin-bottom: 0px;
+}
+
+.title {
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+.login-list {
+    display: flex;
+    justify-content: space-between;
+}
+.header-nav {
+    text-decoration: none;
+    color: black;
+    padding-left: 40px;
+}
+
+footer {
+    margin-top: 30px;
+    border-top: 5px solid #C0C0C0;
+    padding-top: 20px;
+    text-align: center;
+}
+
+table {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+th {
+    background:#C0C0C0;
+    padding: 10px 30px;
+}
+
+td {
+    background: #EEEEEE;
+    padding: 10px 30px;
+    width: 60%;
+}
+
+.btn {
+    text-decoration: none;
+    background: #3399FF;
+    padding: 7px 20px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    margin-right: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.submit {
+    border: none;
+    padding: 7px 20px;
+}
+
+.f {
+    width: 96%;
+    padding: 5px;
+}
+.area {
+    height: 200px;
+}
+.update {
+    background: #FFA500;
+}
+
+.destroy {
+    background: #C0C0C0;
+}
+
+.link {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav {
+    font-weight: bold;
+}
+
+.link:hover {
+    opacity: 0.6;
+}
+
+.flash {
+    text-align: center;
+    background: #3399FF;
+    color: white;
+    margin-top: 20px;
+}
+
+.alert li {
+    color: red;
+    line-height: 24px;
+}
+
+.user-posts {
+    display: flex;
+}
+
+.user-posts h3 {
+    margin-right: 10px;
+}
+
+.like {
+    color: #C0C0C0;
+    font-size: 24px;
+}
+
+.unlike {
+    color: #FFD700;
+    font-size: 24px;
+}
+
+.no-active {
+    font-size: 16px;
+    color: #C0C0C0;
+}
+
+.no-active:hover {
+    color: black;
+}
+
+.none {
+    border-bottom: none;
+}
+
+.nav-btn {
+    position: absolute;
+    top: 75px;
+    right: 60px;
+    background: #C0C0C0;
+    border-radius: 50%;
+    padding: 10px 17px;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+.login_nav {
+    display: none;
+    position: absolute;
+    top: 130px; 
+    right: 8px;
+    background: #C0C0C0;
+    padding-right: 30px;
+    
+}
+
+.login_nav li {
+    list-style: none;
+}
+
+.nav {
+    list-style: none;
+    color: white;
+}

@@ -1,0 +1,25 @@
+<h3>ログイン</h3>
+<% if @message %>
+  <div class="alert">
+    <ul>
+      <li><%= @message %></li>
+    </ul>
+  </div>
+<% end %>
+<table>
+<%= form_with url: login_path, method: :post do |f|%>
+  <tr>
+    <th><%= f.label :email, "メールアドレス" %></th>
+    <td><%= f.email_field :email, class: "f" %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :password, "パスワード" %></th>
+    <td><%= f.password_field :password , class: "f" %></td>
+  </tr>
+  <tr>
+    <th><%= f.label :password_confirmation, "パスワード（確認用）" %></th>
+    <td><%= f.password_field :password_confiemation , class: "f" %></td>
+  </tr>
+</table>
+<%= f.submit "ログイン", class: "submit btn" %>
+<% end %>

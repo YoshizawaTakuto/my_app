@@ -8,9 +8,46 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet">
   </head>
 
   <body>
+    <header>
+      <h1><%= link_to "みんなの広場", posts_path, class: "title" %></h1>
+      <ul>
+        <% if session[:user_id] == nil %>
+          <div class="login-list">
+            <%= link_to "新規登録", new_user_path, class: "link header-nav" %>
+            <%= link_to "ログイン", login_form_path, class: "link header-nav" %>
+          </div>
+        <% else %>
+          <div class="login"> 
+            <div class="login-name"></div>     
+              <%= link_to @login_user.name, user_path(@login_user), class: "link header-nav" %>  
+            </div>
+            <div class="nav-btn" id="show-btn">
+              <i class="fa fa-bars"></i>
+            </div>
+          </div>  
+        <% end %>
+      </ul>
+    </header>
+    <div class="login_nav" id="show-nav">
+      <ul>
+        <li><%= link_to "新規投稿", new_post_path, class: "link nav" %>
+        <li><%= link_to "投稿者一覧", users_path, class: "link nav" %>
+        <li><%= link_to "投稿一覧", posts_path, class: "link nav" %>
+        <li><%= link_to "ログアウト", logout_path, method: :post, class: "link nav" %></li>
+      </ul>
+    </div>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
+    <footer>
+      <p>@yoshizawa</p>
+    </footer>
   </body>
 </html>

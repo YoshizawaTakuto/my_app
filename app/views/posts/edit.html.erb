@@ -1,0 +1,17 @@
+<h3>投稿編集</h3>
+
+  <%= form_with model: @post do |f| %>
+  <%= render "shared/error_message", model: f.object %>
+    <table>
+      <tr>
+        <th><%= f.label :title, "題名" %></th>
+        <td><%= f.text_field :title , class: "f" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :content, "内容" %></th>
+        <td><%= f.text_area :content , class: "f area" %></td>
+      </tr>
+    </table>
+    <%= f.submit "更新", class:"submit btn" %>
+    <%= link_to "戻る", post_path(@post), class:"btn" %>
+  <% end %>
