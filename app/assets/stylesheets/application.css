@@ -4,6 +4,7 @@ header {
     border-bottom: 5px solid #C0C0C0;
     padding-bottom: 10px;
     background-size: cover;
+    font-weight: bold;
 }
 
 header li {
@@ -42,17 +43,17 @@ footer {
 table {
     margin-bottom: 10px;
     width: 100%;
+    text-align: center;
 }
 
 th {
     background:#C0C0C0;
-    padding: 10px 30px;
+    padding: 5px 0;
 }
 
 td {
     background: #EEEEEE;
-    padding: 10px 30px;
-    width: 60%;
+    padding: 10px;
 }
 
 .btn {
@@ -65,6 +66,7 @@ td {
     margin-right: 5px;
     display: inline-block;
     cursor: pointer;
+    margin-left: 10px;
 }
 
 .btn:hover {
@@ -176,4 +178,22 @@ td {
 .nav {
     list-style: none;
     color: white;
+}
+
+.posts-show td {
+    text-align: center;
+
+}
+
+
+.users-index table {
+    text-align: center;
+}
+
+.posts-index table{
+    text-align: center;
+}
+
+.index {
+    width: 30%;
 }

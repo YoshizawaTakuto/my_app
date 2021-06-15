@@ -1,17 +1,14 @@
+<div class="posts-show">
 <h3><%= "#{@post.user.name}の投稿" %><h3>
 <table>
-        <tr>
-            <th>投稿日時</th>
-            <td><%= @post.created_at.to_s(:datetime_jp) %></td>
-        </tr>
-        <tr>
-            <th>題名</th>
-            <td><%= @post.title %></td>
-        </tr>
-        <tr>
-            <th>内容</th>
-            <td><%= simple_format(@post.content) %></td>
-        </tr>
+        <tr><th>投稿日</th></tr>
+        <tr><td><%= @post.created_at.to_s(:datetime_jp) %></td></tr>
+        
+        <tr><th>題名</th></tr>
+        <tr><td><%= @post.title %></td></tr>
+        
+        <tr><th>内容</th></tr>
+        <tr class="left"><td><%= simple_format(@post.content) %></td></tr>
 </table>
 <% if Like.find_by(user_id: @login_user.id, post_id: @post.id)%>
   <%= link_to "/likes/#{@post.id}/destroy", method: :post do %>
@@ -27,3 +24,4 @@
   <%= link_to "編集", edit_post_path(@post), class: "btn" %>
   <%= link_to "削除", post_path(@post), method: :delete, class: "btn" %>
 <% end %>
+</div>
