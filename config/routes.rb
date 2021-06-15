@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'posts#index'
   post "likes/:id/create" => "likes#create"
   post "likes/:id/destroy" => "likes#destroy"
 
