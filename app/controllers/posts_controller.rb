@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       flash[:notice] = "新規投稿しました"
-      redirect_to "/"
+      redirect_to posts_path
     else
       render "new"
     end
@@ -43,7 +43,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     flash[:notice] = "投稿を削除しました"
-    redirect_to "/"
+    redirect_to posts_path
   end
 
   def post_params
@@ -54,7 +54,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     if @login_user.id != @post.user_id
       flash[:notice] = "権限がありません"
-      redirect_to "/"
+      redirect_to posts_path
     end
   end
 

@@ -14,5 +14,5 @@
             <%= f.hidden_field :user_id, value: @login_user.id %>
     </table>
     <%= f.submit "投稿", class:"submit btn" %>
-    <%= link_to "戻る", "/", class:"btn" %>
+    <%= link_to "戻る", posts_path, class:"btn" %>
   <% end %>

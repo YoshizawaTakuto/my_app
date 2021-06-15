@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "ユーザーを登録しました"
-      redirect_to "/"
+      redirect_to posts_path
     else
       render "new"
     end
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       flash[:notice] = "ユーザー情報を変更しました"
-      redirect_to "/"
+      redirect_to user_path(@user)
     else
       render "edit"
     end
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:notice] = "ユーザー情報を削除しました"
-    redirect_to "/"
+    redirect_to posts_path
   end
 
   def login_form
@@ -56,7 +56,7 @@ class UsersController < ApplicationController
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       flash[:notice] = "ログインしました"
-      redirect_to "/"
+      redirect_to posts_path
     else
       @message = "メールアドレスかパスワードが間違っています"
       render "login_form"
@@ -82,7 +82,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @login_user != @user
       flash[:notice] = "権限がありません"
-      redirect_to  "/"
+      redirect_to  posts_path
     end
   end
 end

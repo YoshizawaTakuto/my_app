@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
     def set_login
         if @login_user
             flash[:notice] = "すでにログインしています"
-            redirect_to "/"
+            redirect_to posts_path
         end
     end
 end
