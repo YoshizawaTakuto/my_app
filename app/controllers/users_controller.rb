@@ -82,7 +82,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @login_user != @user
       flash[:notice] = "権限がありません"
-      redirect_to  posts_path
+      redirect_to posts_path
     end
   end
 end
